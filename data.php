@@ -1,5 +1,7 @@
 <?php
     $n=3;
+
+    $dataNumber = 0;
 ?>
 <style>
     p, table,tr, th, td {
@@ -47,29 +49,54 @@
                 </td>
         </tr>
         <?php 
-            $data = 0;
             $sql = "SELECT * FROM `test1` WHERE 1";
             $data = mysqli_query($conn, $sql);
             while($row = mysqli_fetch_assoc($data)){ 
+                //echo $dataNumber;
         ?>
             <tr>
                 <td><?php echo $row["id"]; ?></td>
-                <td id="name<?php echo $data;?>"><?php echo $row["name"]; ?></td>
-                <td id="short<?php echo $data;?>"><?php echo $row["short"]; ?></td>
+                <td id="name<?php echo $dataNumber; ?>" ><?php echo $row["name"]; ?></td>
+                <td id="short<?php echo $dataNumber; ?>" ><?php echo $row["short"]; ?></td>
             </tr>
-        <?php $data++;} ?>
+        <?php $dataNumber++;} ?>
     </table>
 </div>
 <script>
         $(document).ready( function () {
             <?php
+                $j=0;
+                while($j<=$dataNumber){ ?>
+
+                $( "#name<?php echo $j;?>" ).click(function() {
+                    document.getElementById("field1").value = document.getElementById("name<?php echo $j;?>").innerHTML;
+                    document.getElementById("field2").value = document.getElementById("short<?php echo $j;?>").innerHTML;
+                    document.getElementById("save").disabled = true;
+                    document.getElementById("reset").disabled = true;
+                    document.getElementById("update").disabled = false;
+                    document.getElementById("delete").disabled = false;
+
+                });
+                $( "#short<?php echo $j;?>" ).click(function() {
+                    document.getElementById("field1").value = document.getElementById("name<?php echo $j;?>").innerHTML;
+                    document.getElementById("field2").value = document.getElementById("short<?php echo $j;?>").innerHTML;
+                    document.getElementById("save").disabled = true;
+                    document.getElementById("reset").disabled = true;
+                    document.getElementById("update").disabled = false;
+                    document.getElementById("delete").disabled = false;
+                });
+                <?php
+                    $j++;
+                }
                 $i=0;
                 while(1){
             ?>
+            
             $( "#test<?php echo $i;?>" ).click(function() {
                 var test<?php echo $i;?> = document.getElementById("test<?php echo $i;?>").innerHTML;
                 //alert(test<?php echo $i;?>);
                 document.getElementById("field1").value = test<?php echo $i;?>;
+                document.getElementById("field2").value = "";
                 $.ajax({
                     url:"getData.php",
                     type: "POST",
@@ -80,6 +107,10 @@
                         //alert(result);
                     }
                 });
+                    document.getElementById("save").disabled = false;
+                    document.getElementById("reset").disabled = false;
+                    document.getElementById("update").disabled = true;
+                    document.getElementById("delete").disabled = true;
             });
             
             <?php $i++; 
