@@ -24,9 +24,7 @@
                 <?php
                  $i=0;
                  while(1){ ?>
-                <p id="test<?php echo $i;?>" value="test<?php echo $i;?>">
-                    test<?php echo $i;?>
-                </p>
+                <p id="test<?php echo $i;?>" value="test<?php echo $i;?>">test<?php echo $i;?></p>
                 <?php $i++; 
                     if($i>$n){
                         break;
@@ -49,7 +47,7 @@
                 </td>
         </tr>
         <?php 
-            $sql = "SELECT * FROM `test` WHERE 1";
+            $sql = "SELECT * FROM `test1` WHERE 1";
             $data = mysqli_query($conn, $sql);
             while($row = mysqli_fetch_assoc($data)){ 
         ?>
@@ -69,6 +67,7 @@
             ?>
             $( "#test<?php echo $i;?>" ).click(function() {
                 var test<?php echo $i;?> = document.getElementById("test<?php echo $i;?>").innerHTML;
+                //alert(test<?php echo $i;?>);
                 document.getElementById("field1").value = test<?php echo $i;?>;
                 $.ajax({
                     url:"getData.php",

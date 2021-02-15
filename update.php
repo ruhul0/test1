@@ -1,7 +1,18 @@
 <?php
     include "db.php";
+    $count = 0;
     $field1 = $_POST["field1"];
     $field2 = $_POST["field2"];
-    $sql = "UPDATE `test` SET `short`='".$field2."' WHERE '".$field1."'";
-    $result = mysqli_query($conn, $sql);
+    /*
+    $sqlCheck = "SELECT * FROM `test` WHERE `name` = '".$field1."'";
+    $resultCheck = mysqli_query($conn, $sql);
+    while(mysqli_fetch_assoc($resultCheck)){
+        $count++;
+    }
+    if($count==0){
+        */
+        $sql = "UPDATE `test1` SET `short`='".$field2."' WHERE name = '".$field1."'";
+        $result = mysqli_query($conn, $sql);
+        echo $field1." Updated";
+    /* } */
 ?>
