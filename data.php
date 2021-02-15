@@ -36,7 +36,7 @@
     </div>
 </div>
 <div class="container">
-    <table>
+    <table id="tableData">
         <tr>
                 <td>
                     ID
@@ -104,6 +104,7 @@
                         test<?php echo $i;?>:test<?php echo $i;?>
                     },
                     success: function(result){
+                        $('#tableData').html(result);
                         //alert(result);
                     }
                 });
@@ -129,6 +130,7 @@
                         field2:field2
                     },
                     success: function(result){
+                        $('#tableData').html(result)
                         alert(result);
                     }
                 });
@@ -144,6 +146,7 @@
                         field2:field2
                     },
                     success: function(result){
+                        $('#tableData').html(result)
                         alert(result);
                     }
                 });
@@ -160,6 +163,7 @@
                         field2:field2
                     },
                     success: function(result){
+                        $('#tableData').html(result)
                         alert(result);
                     }
                 });
