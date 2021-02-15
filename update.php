@@ -13,7 +13,7 @@
         */
         $sql = "UPDATE `test1` SET `short`='".$field2."' WHERE name = '".$field1."'";
         $result = mysqli_query($conn, $sql);
-        include "dataTable.php";
         //echo $field1." Updated";
     /* } */
+    include "dataTable.php";
 ?>

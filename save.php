@@ -18,6 +18,7 @@
         $sql = "INSERT INTO `test1`( `name`, `short`) VALUES ('".$field1."','".$field2."')";
         //echo $sql;
         $result = mysqli_query($conn, $sql);
-        echo $field1." Saved";
+        //echo $field1." Saved. Reload to get data in table.";
     /* } */
+    include "dataTable.php";
 ?>

@@ -8,6 +8,98 @@
     border: 1px solid black;
     }
 </style>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+
+<style>
+body {
+	font-family: 'Varela Round', sans-serif;
+}
+.modal-confirm {		
+	color: #434e65;
+	width: 525px;
+}
+.modal-confirm .modal-content {
+	padding: 20px;
+	font-size: 16px;
+	border: none;
+}
+.modal-confirm .modal-header {
+	background: #FE5A0E;
+	border-bottom: none;   
+	position: relative;
+	text-align: center;
+	margin: -20px -20px 0;
+	padding: 35px;
+}
+.modal-confirm h4 {
+	text-align: center;
+	font-size: 36px;
+	margin: 10px 0;
+}
+.modal-confirm .form-control, .modal-confirm .btn {
+	min-height: 40px;
+}
+.modal-confirm .close {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	color: #fff;
+	text-shadow: none;
+	opacity: 0.5;
+}
+.modal-confirm .close:hover {
+	opacity: 0.8;
+}
+.modal-confirm .icon-box {
+	color: #fff;		
+	width: 95px;
+	height: 95px;
+	display: inline-block;
+	border-radius: 50%;
+	z-index: 9;
+	border: 5px solid #fff;
+	padding: 15px;
+	text-align: center;
+}
+.modal-confirm .icon-box i {
+	font-size: 64px;
+	margin: -4px 0 0 -4px;
+}
+.modal-confirm.modal-dialog {
+	margin-top: 80px;
+}
+.modal-confirm .btn, .modal-confirm .btn:active {
+	color: #fff;
+	border-radius: 4px;
+	background: #dab26d !important;
+	text-decoration: none;
+	transition: all 0.4s;
+	line-height: normal;
+	border-radius: 30px;
+	margin-top: 10px;
+	padding: 6px 20px;
+	border: none;
+}
+.modal-confirm .btn:hover, .modal-confirm .btn:focus {
+	background: #eda645 !important;
+	outline: none;
+}
+.modal-confirm .btn span {
+	margin: 1px 3px 0;
+	float: left;
+}
+.modal-confirm .btn i {
+	margin-left: 1px;
+	font-size: 20px;
+	float: right;
+}
+.trigger-btn {
+	display: inline-block;
+	margin: 100px auto;
+}
+</style>
 <div class="jumbotron">
 </div>
 <div class="container">
@@ -23,6 +115,7 @@
             <button id="reset" class="btn btn-primary">Reset</button>
         </div>
         <div class="col-md-6">
+            <h1>Choose Value to enter data</h1>
                 <?php
                  $i=0;
                  while(1){ ?>
@@ -35,6 +128,93 @@
         </div>
     </div>
 </div>
+
+<div id="myModal" class="modal fade">
+	<div class="modal-dialog modal-confirm">
+		<div class="modal-content">
+			<div class="modal-header justify-content-center">
+				<div class="icon-box">
+					<i class="material-icons">&#xE876;</i>
+				</div>
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			</div>
+			<div class="modal-body text-center">
+				<h4>Great!</h4>	
+				<p>Data Saved Successfully.</p>
+                <button class="rqa-form" data-dismiss="modal" style=" width:50%;  background: #FE5A0E; border: none; color: white;font-family:'Poppins';font-size:16px;font-weight:600;line-height:44px;"><span>Keep Browsing</span> <i class="fa fa-arrow-right"></i></button>
+                <!-- <form class="rqa-form"> -->
+                 <!-- <button class="" data-dismiss="modal" style="  background: #FE5A0E; border: none; color: white;"><span>Keep Browsing</span> <i class="fa fa-arrow-right"></button>
+			 -->
+                </form>
+				</div>
+		</div>
+	</div>
+</div> 
+<div id="saveModal" class="modal fade">
+	<div class="modal-dialog modal-confirm">
+		<div class="modal-content">
+			<div class="modal-header justify-content-center">
+				<div class="icon-box">
+					<i class="material-icons">&#xE876;</i>
+				</div>
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			</div>
+			<div class="modal-body text-center">
+				<h4>Great!</h4>	
+				<p>Data Saved Successfully.</p>
+                <button class="rqa-form" data-dismiss="modal" style=" width:50%;  background: #FE5A0E; border: none; color: white;font-family:'Poppins';font-size:16px;font-weight:600;line-height:44px;"><span>Keep Browsing</span> <i class="fa fa-arrow-right"></i></button>
+                <!-- <form class="rqa-form"> -->
+                 <!-- <button class="" data-dismiss="modal" style="  background: #FE5A0E; border: none; color: white;"><span>Keep Browsing</span> <i class="fa fa-arrow-right"></button>
+			 -->
+                </form>
+				</div>
+		</div>
+	</div>
+</div> 
+<div id="updateModal" class="modal fade">
+	<div class="modal-dialog modal-confirm">
+		<div class="modal-content">
+			<div class="modal-header justify-content-center">
+				<div class="icon-box">
+					<i class="material-icons">&#xE876;</i>
+				</div>
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			</div>
+			<div class="modal-body text-center">
+				<h4>Great!</h4>	
+				<p>Data Updated Successfully.</p>
+                <button class="rqa-form" data-dismiss="modal" style=" width:50%;  background: #FE5A0E; border: none; color: white;font-family:'Poppins';font-size:16px;font-weight:600;line-height:44px;"><span>Keep Browsing</span> <i class="fa fa-arrow-right"></i></button>
+                <!-- <form class="rqa-form"> -->
+                 <!-- <button class="" data-dismiss="modal" style="  background: #FE5A0E; border: none; color: white;"><span>Keep Browsing</span> <i class="fa fa-arrow-right"></button>
+			 -->
+                </form>
+				</div>
+		</div>
+	</div>
+</div> 
+<div id="deleteModal" class="modal fade">
+	<div class="modal-dialog modal-confirm">
+		<div class="modal-content">
+			<div class="modal-header justify-content-center">
+				<div class="icon-box">
+					<i class="material-icons">&#xE876;</i>
+				</div>
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			</div>
+			<div class="modal-body text-center">
+				<h4>Great!</h4>	
+				<p>Data Deleted Successfully.</p>
+                <button class="rqa-form" data-dismiss="modal" style=" width:50%;  background: #FE5A0E; border: none; color: white;font-family:'Poppins';font-size:16px;font-weight:600;line-height:44px;"><span>Keep Browsing</span> <i class="fa fa-arrow-right"></i></button>
+                <!-- <form class="rqa-form"> -->
+                 <!-- <button class="" data-dismiss="modal" style="  background: #FE5A0E; border: none; color: white;"><span>Keep Browsing</span> <i class="fa fa-arrow-right"></button>
+			 -->
+                </form>
+				</div>
+		</div>
+	</div>
+</div> 
+
+
 <div class="container">
     <table id="tableData">
         <tr>
@@ -54,7 +234,7 @@
             while($row = mysqli_fetch_assoc($data)){ 
                 //echo $dataNumber;
         ?>
-            <tr>
+            <tr id="trData">
                 <td><?php echo $row["id"]; ?></td>
                 <td id="name<?php echo $dataNumber; ?>" ><?php echo $row["name"]; ?></td>
                 <td id="short<?php echo $dataNumber; ?>" ><?php echo $row["short"]; ?></td>
@@ -104,7 +284,6 @@
                         test<?php echo $i;?>:test<?php echo $i;?>
                     },
                     success: function(result){
-                        $('#tableData').html(result);
                         //alert(result);
                     }
                 });
@@ -130,8 +309,9 @@
                         field2:field2
                     },
                     success: function(result){
-                        $('#tableData').html(result)
-                        alert(result);
+                        $('#tableData').html(result);
+                        //alert(result);
+                        $('#saveModal').modal('show');
                     }
                 });
             });
@@ -146,8 +326,9 @@
                         field2:field2
                     },
                     success: function(result){
-                        $('#tableData').html(result)
-                        alert(result);
+                        $('#tableData').html(result);
+                        //alert(result);
+                        $('#updateModal').modal('show');
                     }
                 });
             
@@ -163,8 +344,9 @@
                         field2:field2
                     },
                     success: function(result){
-                        $('#tableData').html(result)
-                        alert(result);
+                        $('#tableData').html(result);
+                        //alert(result);
+                        $('#deleteModal').modal('show');
                     }
                 });
             
