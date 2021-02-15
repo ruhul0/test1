@@ -47,16 +47,17 @@
                 </td>
         </tr>
         <?php 
+            $data = 0;
             $sql = "SELECT * FROM `test1` WHERE 1";
             $data = mysqli_query($conn, $sql);
             while($row = mysqli_fetch_assoc($data)){ 
         ?>
             <tr>
                 <td><?php echo $row["id"]; ?></td>
-                <td><?php echo $row["name"]; ?></td>
-                <td><?php echo $row["short"]; ?></td>
+                <td id="name<?php echo $data;?>"><?php echo $row["name"]; ?></td>
+                <td id="short<?php echo $data;?>"><?php echo $row["short"]; ?></td>
             </tr>
-        <?php } ?>
+        <?php $data++;} ?>
     </table>
 </div>
 <script>
