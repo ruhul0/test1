@@ -1,13 +1,13 @@
-<table id="tableData">
+<table id="tableData"  class="table">
         <tr>
                 <td>
-                    ID
+                    <b>ID</b>
                 </td>
                 <td>
-                    Name
+                    <b>Name</b>
                 </td>
                 <td>
-                    Short Name
+                    <b>Short Name</b>
                 </td>
         </tr>
 <?php 

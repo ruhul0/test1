@@ -4,7 +4,7 @@
     $dataNumber = 0;
 ?>
 <style>
-    p, table,tr, th, td {
+    table,tr, th, td {
     border: 1px solid black;
     }
 </style>
@@ -99,32 +99,41 @@ body {
 	display: inline-block;
 	margin: 100px auto;
 }
+.form-control{
+    width: 50%;
+}
+.list-group-item{
+    width: 15%;
+}
 </style>
 <div class="jumbotron">
 </div>
 <div class="container">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6 col-sm-6">
             <form>
-                <input id="field1" type="text" disabled>Choose from table</input> <br><br>
-                <input id="field2" type="text" >Short form</input>
+                <input  class="form-control"  id="field1" type="text" disabled>Choose from table</input> <br><br>
+                <input  class="form-control"  id="field2" type="text" >Short form</input>
             </form>
             <button id="save" class="btn btn-primary">Save</button>
             <button id="update" class="btn btn-primary">Update</button>
             <button id="delete" class="btn btn-primary">Delete</button>
             <button id="reset" class="btn btn-primary">Reset</button>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 col-sm-6">
+            
             <h1>Choose Value to enter data</h1>
+            <ul class="list-group">
                 <?php
                  $i=0;
                  while(1){ ?>
-                <p id="test<?php echo $i;?>" value="test<?php echo $i;?>">test<?php echo $i;?></p>
+                <li class="list-group-item"><p id="test<?php echo $i;?>" value="test<?php echo $i;?>">test<?php echo $i;?></p></li>
                 <?php $i++; 
                     if($i>$n){
                         break;
                     }
                 } ?>
+                </ul>
         </div>
     </div>
 </div>
@@ -216,16 +225,16 @@ body {
 
 
 <div class="container">
-    <table id="tableData">
+    <table id="tableData"  class="table">
         <tr>
                 <td>
-                    ID
+                    <b>ID</b>
                 </td>
                 <td>
-                    Name
+                    <b>Name</b>
                 </td>
                 <td>
-                    Short Name
+                    <b>Short Name</b>
                 </td>
         </tr>
         <?php 
